@@ -127,7 +127,7 @@ int main(int argc, char *argv[]) {
 			else scePowerRequestColdReset();
 		}
 	
-		vita2d_draw_rectangle(0, 0, 940, 54, DGREY);
+		vita2d_draw_rectangle(0, 0, 960, 54, DGREY);
 		
 		vita2d_pgf_draw_text(pgf, 20,  36, RGBA8(255,255,255,255), 1.2f, "Vita 2000 LCD Color Saturation VPK by Electric1447");
 		vita2d_pgf_draw_text(pgf, 20, 524, LGREY, 1.0f, "https://github.com/Electric1447/lcd-color-saturation");
