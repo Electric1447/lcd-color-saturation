@@ -18,7 +18,7 @@ include("${VITASDK}/share/vita.cmake" REQUIRED)
 
 set(VITA_APP_NAME "LCD Color Saturation")
 set(VITA_TITLEID  "LCDSAT000")
-set(VITA_VERSION  "01.00")
+set(VITA_VERSION  "01.10")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -35,24 +35,18 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    vita2d
-    freetype
-    png
-    jpeg
-    z
-    m
-    c
+	vita2d
+	png
+	m
+	z
 	ScePgf_stub 
-    SceGxm_stub
-    SceCtrl_stub
-    SceAppUtil_stub
-    ScePower_stub
-    SceSysmodule_stub
-    SceDisplay_stub
+	SceGxm_stub
+	SceCtrl_stub
+	SceSysmodule_stub
+	SceDisplay_stub
+	SceAVConfig_stub
 	SceCommonDialog_stub
-    SceLibKernel_stub
-	SceShellSvc_stub 
-    SceRegistryMgr_stub
+	SceRegistryMgr_stub
 )
 
 vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME} UNSAFE)
