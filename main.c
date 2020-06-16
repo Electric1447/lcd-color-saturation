@@ -82,9 +82,9 @@ int main(int argc, char *argv[]) {
 		// Get registry key
 		csm = regMgrGetKeyInt(REG_DISPLAY_CATEGORY, REG_KEY_CSM); // color_space_mode
 		
-        sceCtrlPeekBufferPositive(0, &pad, 1);
-        vita2d_start_drawing();
-        vita2d_clear_screen();
+		sceCtrlPeekBufferPositive(0, &pad, 1);
+		vita2d_start_drawing();
+		vita2d_clear_screen();
 		
 		if (pad.buttons & SCE_CTRL_CROSS)
 			changeLcdMode();
@@ -102,16 +102,16 @@ int main(int argc, char *argv[]) {
 		vita2d_pgf_draw_text(pgf, 20, 240, WHITE, 1.0f, "Press X to install");
 		vita2d_pgf_draw_text(pgf, 20, 260, WHITE, 1.0f, "Press O to exit");
 		
-        vita2d_end_drawing();
-        vita2d_swap_buffers();
+		vita2d_end_drawing();
+		vita2d_swap_buffers();
 
-        if (pad.buttons & SCE_CTRL_CIRCLE) 
+		if (pad.buttons & SCE_CTRL_CIRCLE) 
 			break;
-    }
+	}
 	
-    vita2d_fini();
+	vita2d_fini();
 	vita2d_free_pgf(pgf);
 	
-    sceKernelExitProcess(0);
-    return 0;
+	sceKernelExitProcess(0);
+	return 0;
 }
