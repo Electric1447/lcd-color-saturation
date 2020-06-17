@@ -32,14 +32,6 @@
 #define STATUS_NOT_INSTALLED 	0
 
 
-int status_color[] = {RED, GREEN};
-
-char *status_text[] = {
-	"NOT INSTALLED (stock)",
-	"INSTALLED"
-};
-
-int state = IDLE;
 int csm;
 
 
@@ -95,7 +87,7 @@ int main(int argc, char *argv[]) {
 		vita2d_pgf_draw_text(pgf, 20, 524, LGREY, 1.0f, "https://github.com/Electric1447/lcd-color-saturation");
 		
 		vita2d_pgf_draw_text(pgf,  20,  94, ORANGE, 1.0f, "Will only make a difference for Vita 2000 (Slim)");
-		vita2d_pgf_draw_textf(pgf, 20, 124, status_color[csm], 1.0f, "LCD status: %s", status_text[csm]);
+		vita2d_pgf_draw_textf(pgf, 20, 124, csm ? GREEN : RED, 1.0f, "LCD status: %s", csm ? "NOT INSTALLED (stock)" : "INSTALLED");
 		vita2d_pgf_draw_textf(pgf, 20, 164, CYAN, 1.0f, "%s   =  %d", REG_KEY_CSM, csm);
 		
 		vita2d_pgf_draw_text(pgf, 20, 240, WHITE, 1.0f, "Press X to install\nPress O to exit.");
