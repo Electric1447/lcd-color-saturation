@@ -3,12 +3,11 @@
  */
 #pragma GCC diagnostic ignored "-Wimplicit-function-declaration"
 
+#include <string.h>
+
 #include <psp2/ctrl.h>
 #include <psp2/display.h>
 #include <psp2/registrymgr.h>
-
-#include <string.h>
-
 #include <vita2d.h>
 
 
@@ -95,12 +94,11 @@ int main(int argc, char *argv[]) {
 		vita2d_pgf_draw_text(pgf, 20,  36, WHITE, 1.2f, "Vita 2000 LCD Color Saturation VPK by Electric1447");
 		vita2d_pgf_draw_text(pgf, 20, 524, LGREY, 1.0f, "https://github.com/Electric1447/lcd-color-saturation");
 		
-		vita2d_pgf_draw_text(pgf, 20, 94, ORANGE, 1.0f, "Will only make a difference for Vita 2000 (Slim)");
+		vita2d_pgf_draw_text(pgf,  20,  94, ORANGE, 1.0f, "Will only make a difference for Vita 2000 (Slim)");
 		vita2d_pgf_draw_textf(pgf, 20, 124, status_color[csm], 1.0f, "LCD status: %s", status_text[csm]);
 		vita2d_pgf_draw_textf(pgf, 20, 164, CYAN, 1.0f, "%s   =  %d", REG_KEY_CSM, csm);
 		
-		vita2d_pgf_draw_text(pgf, 20, 240, WHITE, 1.0f, "Press X to install");
-		vita2d_pgf_draw_text(pgf, 20, 260, WHITE, 1.0f, "Press O to exit");
+		vita2d_pgf_draw_text(pgf, 20, 240, WHITE, 1.0f, "Press X to install\nPress O to exit.");
 		
 		vita2d_end_drawing();
 		vita2d_swap_buffers();
