@@ -16,7 +16,6 @@ Prerequisites:
 
 Compiling:
 ```
-cmake .
 make
 ```
 
